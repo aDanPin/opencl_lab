@@ -1,10 +1,6 @@
 #define __CL_ENABLE_EXCEPTIONS
 
-#if defined(__APPLE__) || defined(__MACOSX)
-#include <OpenCL/cl.hpp>
-#else
 #include <CL/cl.hpp>
-#endif
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
@@ -19,6 +15,7 @@ const char* helloStr =
 
 int main(void) {
     cl_int err = CL_SUCCESS;
+
     try {
         std::vector<cl::Platform> platforms;
         cl::Platform::get(&platforms);
